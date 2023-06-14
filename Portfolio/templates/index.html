@@ -1,0 +1,202 @@
+{% load i18n %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="../static/assets/css/styles.css">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio responsive complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav_logo">{{ home.name }}</a>
+                </div>
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list">
+                        <li class="nav_item"><a href="#home" class="nav_link active">{% trans "Home" %}</a></li>
+                        <li class="nav_item"><a href="#about" class="nav_link">{% trans "About" %}</a></li>
+                        <li class="nav_item"><a href="#skills" class="nav_link">{% trans "Skills" %}</a></li>
+                        <li class="nav_item"><a href="#portfolio" class="nav_link">{% trans "Portfolio" %}</a></li>
+                        <li class="nav_item"><a href="#contact" class="nav_link">{% trans "Contact" %}</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home_container bd-grid">
+                    <h1 class="home_title">
+                        <span>{% blocktranslate with greetings1=home.greetings_1%}{{ greetings1 }}{% endblocktranslate %}</span>
+                        <span>{% blocktranslate with greetings2=home.greetings_2%}{{ greetings2 }}{% endblocktranslate %}</span>
+                    </h1>
+
+                    <!--=====  LANGUAGE CHANGE =====-->
+                    <form class="language-form" action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}" />
+                        
+                        <div class="language-switch{% if language.code == LANGUAGE_CODE %} selected{% endif %}">
+                          <select name="language" onchange="this.form.submit()">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                              <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected="selected" {% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                              </option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                    </form>
+
+                    <img src="{{ home.picture.url }}" alt="" class="home_img">
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about">
+                <h2 class="section-title">{% trans "About" %}</h2>
+
+                <div class="about_container bd-grid">
+                    <div class="about_img">
+                        <img src="{{ about.profile_img.url }}" alt="">
+                    </div>
+
+                    <div>
+                        <h2 class="about_subtitle">{% blocktranslate with aheading=about.heading%}{{ aheading }}{% endblocktranslate %} {{ home.name }}</h2>
+                        <span class="about_profession">{% blocktranslate with acareer=about.career%}{{ acareer }}{% endblocktranslate %}</span>
+                        <p class="about_text">{% blocktranslate with adescription=about.description%}{{ adescription }}{% endblocktranslate %}</p>
+
+                        <div class="about_social">
+                            {% for profile in profiles %}
+                                <a href="{{ profile.link }}" class="about_social-icon"><i class='bx bxl-{{ profile.social_name }}'></i></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">{% trans "Skills" %}</h2>
+
+                <div class="skills_container bd-grid">
+                    <div class="skills_box">
+                        {% for category in categories %}
+                        <h3 class="skills_subtitle">{{ category.name }}</h3>
+                            {% for skill in category.skills_set.all %}
+                                <span class="skills_name">{{ skill.skill_name }}</span>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <div class="skills_img">
+                        <img src="../static/assets/img/notebook.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== PORTFOLIO =====-->
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section-title">{% trans "Portfolio" %}</h2>
+
+                <div class="portfolio_container bd-grid">
+                    {% for portfolio in portfolios %}
+                    <div class="c">
+                        <div class="portfolio_img">
+                            <img src="{{ portfolio.image.url}}" alt="">    
+                            <div class="portfolio_link">
+                                <a href="{{portfolio.link }}" class="portfolio_link-name">{% trans "View project" %}</a>
+                            </div>
+                        </div>
+                        <div class="portfolio_about">
+                            <p>{{portfolio.about }}</p>    
+                        </div>
+                        <div class="portfolio_link_code">
+                            <p><a href="{{portfolio.link_code }}" class="portfolio_links">{% trans "Check project repository" %}</a></p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">{% trans "Contact" %}</h2>
+                <div class="contact_container bd-grid">
+                    <form id="contact" name="contact" accept-charset="utf-8">
+                        <label><span>{% trans "Name" %}</span><input name="name" type="text" placeholder="Name"/></label>
+                        <label><span>{% trans "Email" %}</span><input name="email" type="email" placeholder="Email"/></label>
+                        <label><span>{% trans "Message" %}</span><textarea name="message" placeholder="Message"></textarea></label>
+                        <p><input name="submit" type="submit" value="{% trans "Send" %}"/></p>
+                      </form>
+                      <aside>
+                        <p>{% trans "Would You Like to Leave a Message?" %}</p>
+                        <p>{% trans "Don't be shy." %}</p>
+                      </aside>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer section">
+            <div class="footer_container bd-grid">
+                <div class="footer_data">
+                    <h2 class="footer_title">{{ home.name }}</h2>
+                    <p class="footer_text">{% trans "When I orbited the Earth in a spaceship, I saw for the first time how beautiful our planet is. Mankind, let us preserve and increase this beauty, and not destroy it! - Jurij Gagarin" %}</p>
+                </div>
+
+                <div class="footer_data">
+                    <h2 class="footer_title">{% trans "Explore" %}</h2>
+                    <ul>
+                        <li><a href="#home" class="footer_link">{% trans "Home" %}</a></li>
+                        <li><a href="#about" class="footer_link">{% trans "About" %}</a></li>
+                        <li><a href="#skills" class="footer_link">{% trans "Skills" %}</a></li>
+                        <li><a href="#portfolio" class="footer_link">{% trans "Portfolio" %}</a></li>
+                        <li><a href="#Contact" class="footer_link">{% trans "Contact" %}</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_data">
+                    <h2 class="footer_title">{% trans "Follow" %}</h2>
+                    <div class="about_social">
+                        {% for profile in profiles %}
+                            <a href="{{ profile.link }}" class="about_social-icon"><i class='bx bxl-{{ profile.social_name }}'></i></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--===== COOKIES  =====-->
+        <div id="cookies">
+            <div class="container">
+                <div class="subcontainer">
+                    <div class="cookies">
+                        <p>{% trans "This website uses cookies to ensure you get the best experience on our website." %}
+                            <a href="#">{% trans "More info." %}</a>
+                        </p>
+                        <button id="cookies-btn">{% trans "Thats fine." %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--===== MAIN JS =====-->
+        <script src="../static/assets/js/main.js"></script>
+    </body>
+</html>

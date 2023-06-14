@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-14 21:15+0200\n"
+"PO-Revision-Date: 2023-06-14 21:19+0000\n"
+"Last-Translator:   <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: .\PortfolioProject\settings.py:123
+msgid "English"
+msgstr "Angielski"
+
+#: .\PortfolioProject\settings.py:124
+msgid "Polish"
+msgstr "Polski"
+
+#: .\templates\index.html:25 .\templates\index.html:166
+msgid "Home"
+msgstr "Początek"
+
+#: .\templates\index.html:26 .\templates\index.html:73
+#: .\templates\index.html:167
+msgid "About"
+msgstr "O mnie"
+
+#: .\templates\index.html:27 .\templates\index.html:96
+#: .\templates\index.html:168
+msgid "Skills"
+msgstr "Umiejętności"
+
+#: .\templates\index.html:28 .\templates\index.html:115
+#: .\templates\index.html:169
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: .\templates\index.html:29 .\templates\index.html:139
+#: .\templates\index.html:170
+msgid "Contact"
+msgstr "Kontakt"
+
+#: .\templates\index.html:44
+#, python-format
+msgid "%(greetings1)s"
+msgstr "Witajcie"
+
+#: .\templates\index.html:45
+#, python-format
+msgid "%(greetings2)s"
+msgstr "Ziemianie       "
+
+#: .\templates\index.html:81
+#, python-format
+msgid "%(aheading)s"
+msgstr "Pozdrawiam Towarzysze"
+
+#: .\templates\index.html:82
+#, python-format
+msgid "%(acareer)s"
+msgstr "Astronauta"
+
+#: .\templates\index.html:83
+#, python-format
+msgid "%(adescription)s"
+msgstr ""
+"Lorem ipsum (ale po polsku) dolor sit amet, consectetur adipiscing elit. "
+"Fusce at tristique est. Nunc molestie placerat urna, eget fringilla tortor "
+"aliquam eu. Cras a justo faucibus, semper erat in, auctor sem. Vivamus eget "
+"laoreet nunc. Sed tincidunt, nulla in feugiat pulvinar, augue dolor "
+"pellentesque lectus, ut scelerisque nisl turpis eget est. Etiam aliquam "
+"sapien eu arcu ultrices, eu egestas ipsum varius. Donec lobortis vehicula "
+"rhoncus. Cras sollicitudin hendrerit metus. Fusce in blandit enim. Nullam "
+"neque mauris, cursus eget fermentum sed, egestas eget nunc. Sed non sagittis"
+" mi. Nunc dignissim nulla ante, eget fermentum est tempus id. Quisque a "
+"fermentum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia"
+" nostra, per inceptos himenaeos."
+
+#: .\templates\index.html:101
+#, python-format
+msgid "%(cname)s"
+msgstr "Umiejętności"
+
+#: .\templates\index.html:103
+#, python-format
+msgid "%(skill_name)s"
+msgstr "Nazwa umiejętności"
+
+#: .\templates\index.html:123
+msgid "View project"
+msgstr "Sprawdź projekt "
+
+#: .\templates\index.html:130
+msgid "Check project repository"
+msgstr "Sprawdź repozytorium projektu"
+
+#: .\templates\index.html:142
+msgid "Name"
+msgstr "Imię"
+
+#: .\templates\index.html:143
+msgid "Email"
+msgstr "Email"
+
+#: .\templates\index.html:144
+msgid "Message"
+msgstr "Wiadomość"
+
+#: .\templates\index.html:145
+msgid "Send"
+msgstr "Wyślij"
+
+#: .\templates\index.html:148
+msgid "Would You Like to Leave a Message?"
+msgstr "Chcesz zostawić wiadomość?"
+
+#: .\templates\index.html:149
+msgid "Don't be shy."
+msgstr "Nie wstydź się."
+
+#: .\templates\index.html:160
+#| msgid ""
+#| "When I orbited the Earth in a spaceship, I saw for the first time how "
+#| "beautiful our planet is. Mankind, let us preserve and increase this beauty, "
+#| "and not destroy it!"
+msgid ""
+"When I orbited the Earth in a spaceship, I saw for the first time how "
+"beautiful our planet is. Mankind, let us preserve and increase this beauty, "
+"and not destroy it! - Jurij Gagarin"
+msgstr ""
+"Kiedy okrążyłem Ziemię statkiem kosmicznym, po raz pierwszy zobaczyłem, jak "
+"piękna jest nasza planeta. Ludzkość, zachowajmy i pomnażajmy to piękno, a "
+"nie niszczmy je!  - Jurij Gagarin"
+
+#: .\templates\index.html:164
+msgid "Explore"
+msgstr "Odkrywaj"
+
+#: .\templates\index.html:175
+msgid "Follow"
+msgstr "Obserwuj "
+
+#: .\templates\index.html:190
+msgid ""
+"This website uses cookies to ensure you get the best experience on our "
+"website."
+msgstr ""
+"Ta strona korzysta z plików cookie, aby zapewnić najlepszą jakość "
+"korzystania z naszej witryny."
+
+#: .\templates\index.html:191
+msgid "More info."
+msgstr "Więcej informacji."
+
+#: .\templates\index.html:193
+msgid "Thats fine."
+msgstr "W porządku."
+
+#~ msgid "Change"
+#~ msgstr "Zmień"
+
+#~ msgid "Scroll down"
+#~ msgstr "Przesuń w dół "
+
+#~ msgid "Phone"
+#~ msgstr "Numer telefonu"
+
+#~ msgid "Adress"
+#~ msgstr "Adres"
+
+#~ msgid "USSR"
+#~ msgstr "ZSRR"
+
+#~ msgid "Submit"
+#~ msgstr "Wyślij"
+
+#, python-format
+#~ msgid "%(myvar)s"
+#~ msgstr "Pozdrawiam"
+
+#, fuzzy, python-format
+#~ msgid "%(myvar1)s"
+#~ msgstr "Pozdrawiam"
