@@ -374,7 +374,7 @@ img{
     align-items: center;
   }
   
-  form#contact {
+  form#fcontact {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -432,7 +432,7 @@ img{
       flex-direction: column-reverse;
     }
     
-    form#contact {
+    form#fcontact {
       margin-right: 0;
       margin-bottom: 30px;
       width: 100%;
